@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ng1-ui-router</title>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/config.js"></script>
+
+</head>
+<body>
+    <div ng-app="routerApp">
+        <a ui-sref="index({id:30})">show index</a>    
+        <a ui-sref="test({username:'peter'})">show test</a>
+        <div ui-view></div>
+    </div>
+</body>
+</html>
