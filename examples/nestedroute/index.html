@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ng1-ui-router-nestedroute</title>
+
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/angular-ui-router.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div ng-app="nestedApp">
+        <a ui-sref="parent">click me to show parent msg</a>
+        <a ui-sref="parent.child">click me to show child msg</a>
+        <div ui-view></div>
+    </div>
+    <a href="../../index.html">back</a>
+</body>
+</html>

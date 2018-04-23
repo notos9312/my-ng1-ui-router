@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ng1-ui-router-locate</title>
+
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/angular-ui-router.js"></script>
+    <script src="config.js"></script>
+
+</head>
+<body>
+    <div ng-app="locateApp">
+        <a ui-sref="index">show index</a>
+        <a ui-sref="index.content1">show index content1</a>
+        <a ui-sref="index2.content2">show index content2</a>
+        <div ui-view="index"></div>
+        <div ui-view="index2"></div>
+    </div>
+    <a href="../../index.html">back</a>
+</body>
+</html>
