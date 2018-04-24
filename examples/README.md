@@ -5,3 +5,4 @@
 4. passparams--传参
 5. locateuiview--ui-view的定位
 6. resolve--resolve
+7. demo--应用demo
