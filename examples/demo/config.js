@@ -20,9 +20,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     }).state("tabA.itemA", {
         url: '/itemA',
     }).state("tabA.itemB", {
-        url: '/itemB',
+        url: '/itemB/:name',
     }).state("tabA.itemC", {
-        url: '/itemC',
+        url: '^/itemC',
     }).state("tabB", {
         url: '/tabB',
         views: {
@@ -34,12 +34,20 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 }]);
 
 app.controller('ctrl', function($rootScope, $location){
+    console.log('ha');
     $rootScope.myUrl = $location.absUrl();
 });
 
-app.run(['$rootScope', '$location', function($rootScope, $location){
+app.run(['$rootScope', '$location', '$state', function($rootScope, $location, $state){
     $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
     function locationChangeSuccess(event, newUrl, currentUrl){
-        $rootScope.myUrl = newUrl;
+        if($location.url() == "/tabA") {
+            $rootScope.myUrl = "turning to /tabA/itemA";
+            setTimeout(function(){
+                $state.go("tabA.itemA");
+            }, 1000);
+        } else {
+            $rootScope.myUrl = newUrl;
+        }
     }
 }]);

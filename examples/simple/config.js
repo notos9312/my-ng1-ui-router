@@ -1,9 +1,9 @@
 var simpleApp = angular.module('simpleApp', ['ui.router']);
 
 simpleApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/');
+    // $urlRouterProvider.otherwise('/home');
     $stateProvider.state("home", {
-        url: '/',
+        url: '/home',
         template: '<h2>going to test page...</h2>',
         controller: 'ctrl'
     }).state("test", {
