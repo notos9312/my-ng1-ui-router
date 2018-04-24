@@ -7,6 +7,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         views: {
             '': {templateUrl: 'pages/home.html'},
             'nav@home': {templateUrl: 'pages/components/nav.html'},
+            'left@home': {template: '<div class="leftEmpty"></div>'},
             'main@home': {templateUrl: 'pages/components/main.html'}
         }
     }).state("tabA", {
@@ -28,6 +29,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         views: {
             '': {templateUrl: 'pages/tabB.html'},
             'nav@tabB': {templateUrl: 'pages/components/nav.html'},
+            'left@tabB': {template: '<div class="leftEmpty"></div>'},
             'main@tabB': {templateUrl: 'pages/components/main.html'}
         }
     })
@@ -45,7 +47,7 @@ app.run(['$rootScope', '$location', '$state', function($rootScope, $location, $s
             $rootScope.myUrl = "turning to /tabA/itemA";
             setTimeout(function(){
                 $state.go("tabA.itemA");
-            }, 1000);
+            }, 500);
         } else {
             $rootScope.myUrl = newUrl;
         }
